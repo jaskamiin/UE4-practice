@@ -19,9 +19,15 @@ UPositionReport::UPositionReport()
 void UPositionReport::BeginPlay()
 {
 	Super::BeginPlay();
-
-	UE_LOG(LogTemp, Warning, TEXT("Position report reporting for chair"));
 	
+	//FString obj_pos = GetOwner()->GetTransform().GetLocation().ToString(); 
+
+	UE_LOG(LogTemp, Warning, TEXT("%s is at X=%f, Y=%f, Z=%f"), 
+		*GetOwner()->GetName(), //object name
+		GetOwner()->GetActorLocation().X, //coords
+		GetOwner()->GetActorLocation().Y, // ...
+		GetOwner()->GetActorLocation().Z  // ...
+	);	
 }
 
 
