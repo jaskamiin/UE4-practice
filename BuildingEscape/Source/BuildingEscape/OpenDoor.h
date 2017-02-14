@@ -23,13 +23,19 @@ public:
 
 
 	void OpenDoor();
+	void CloseDoor();
 		
 private:
 	UPROPERTY(VisibleAnywhere)
-	float OpenAngle = 90.f;
+	float OpenAngle = -60.f;
 
 	UPROPERTY(EditAnywhere)
 	ATriggerVolume* PressurePlate;
 
-	AActor* ActorThatOpens;
+	UPROPERTY(EditAnywhere)
+	float DoorCloseDelay = 1.f;
+
+	float LastDoorOpenTime = 0.f;
+
+	AActor* Player;
 };
